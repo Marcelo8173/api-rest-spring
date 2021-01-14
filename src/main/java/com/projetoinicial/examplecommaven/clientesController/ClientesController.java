@@ -29,7 +29,7 @@ public class ClientesController {
         cliente3.setTelefone("123123123123");
         var cliente4 = new DomainClientes();
         cliente4.setId(4L);
-        cliente4.setNome("Marceloasd");
+        cliente4.setNome("Marceloas123123");
         cliente4.setEmail("marceloanasddrebio1@gmail.com");
         cliente4.setTelefone("123123asdasd");
 
