@@ -4,16 +4,13 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class DomainClientes {
+public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
     private String nome;
-    @Column
     private String email;
-    @Column
     private String telefone;
 
 
@@ -52,13 +49,13 @@ public class DomainClientes {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        DomainClientes that = (DomainClientes) o;
-        return id.equals(that.id);
+        if (!(o instanceof Cliente)) return false;
+        Cliente that = (Cliente) o;
+        return Objects.equals(getId(), that.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 }
