@@ -1,9 +1,19 @@
 package com.projetoinicial.examplecommaven.domain.clientes;
 
+import javax.persistence.*;
+import java.util.Objects;
+
+@Entity
 public class DomainClientes {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
     private String nome;
+    @Column
     private String email;
+    @Column
     private String telefone;
 
 
@@ -37,5 +47,18 @@ public class DomainClientes {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DomainClientes that = (DomainClientes) o;
+        return id.equals(that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
